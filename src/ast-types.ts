@@ -435,6 +435,8 @@ type PaintImage_ = {
     imageRef: string,
     /** Affine transform applied to the image, only present if scaleMode is STRETCH */
     imageTransform?: Transform,
+    /** Defines what image filters have been applied to this paint. If this property is not defined, no filters have been applied */
+    filters?: ImageFilters,
     /** Amount image is scaled by in tiling, only present if scaleMode is TILE */
     scalingFactor?: number,
     /** Image rotation, in degrees. */
@@ -488,6 +490,24 @@ export type Transform = [
     [ number, number, number ],
     [ number, number, number ]
 ];
+
+/** Defines the image filters applied to an image paint. All values are from -1 to 1 */
+export interface ImageFilters {
+    //default - 0
+    exposure: number;
+    //default - 0
+    contrast: number;
+    //default - 0
+    saturation: number;
+    //default - 0
+    temperature: number;
+    //default - 0
+    tint: number;
+    //default - 0
+    highlights: number;
+    //default - 0
+    shadows: number;
+}
 
 export enum PathWindingRule {
     EVENODD = 'EVENODD',

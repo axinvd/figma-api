@@ -192,9 +192,8 @@ export interface GetImageResult {
 
 export interface GetImageFillsResult {
     err?: string,
-    /** { nodeId -> rendered image url } */
-    images: { [imageRef: string]: string|null },
-    meta?: { images: { [imageRef: string]: string|null }, },
+    images: { [imageRef: string]: string },
+    meta?: { images: { [imageRef: string]: string }, },
     status?: number,
 };
 
